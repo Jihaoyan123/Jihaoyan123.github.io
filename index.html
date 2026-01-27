@@ -1,8 +1,300 @@
-<p>Hello 大家好</p>
-<p>我是Xiaohundan123，这是我的个人网站。 </p>
-<p>很高兴你来到这里, 你可以在以下的网站找到我</p>
-<p>我的b站账号名是小混蛋工坊，记着点个赞！</p>
-
-<ul>
-  <li> <a href="https://space.bilibili.com/3546922518317391?spm_id_from=333.1007.0.0">BiliBili主页</a> </li>
-</ul>
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>混蛋资源下载站</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', 'Microsoft YaHei', sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            color: #000000;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .main-column {
+            background: #ffffff;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            padding: 35px;
+            margin-bottom: 30px;
+            border: 1px solid #e0e0e0;
+        }
+        
+        .column-title {
+            font-size: 32px;
+            font-weight: 700;
+            color: #000000;
+            margin-bottom: 25px;
+            text-align: center;
+            position: relative;
+        }
+        
+        .column-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: #1e90ff;
+            border-radius: 2px;
+        }
+        
+        .intro-content {
+            font-size: 16px;
+            line-height: 1.8;
+            color: #333333;
+            margin-bottom: 20px;
+        }
+        
+        .intro-list {
+            margin: 20px 0;
+            padding-left: 20px;
+        }
+        
+        .intro-list li {
+            margin-bottom: 10px;
+            line-height: 1.6;
+        }
+        
+        .author-info {
+            text-align: center;
+            margin-top: 25px;
+            padding-top: 20px;
+            border-top: 1px solid #e0e0e0;
+        }
+        
+        .author-link {
+            display: inline-block;
+            background: #1e90ff;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 10px 20px;
+                            border-radius: 6px;
+            font-weight: 600;
+            margin-bottom: 10px;
+            transition: all 0.3s ease;
+        }
+        
+        .author-link:hover {
+            background: #0077ff;
+            transform: translateY(-2px);
+        }
+        
+        .author-support {
+            font-size: 14px;
+            color: #666666;
+        }
+        
+        .software-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 20px;
+        }
+        
+        .software-column {
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 25px;
+            border: 2px solid #e9ecef;
+            transition: all 0.3s ease;
+        }
+        
+        .software-column:hover {
+            border-color: #1e90ff;
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(30, 144, 255, 0.15);
+        }
+        
+        .software-subtitle {
+            font-size: 20px;
+            font-weight: 600;
+            color: #000000;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+        
+        .software-info {
+            text-align: center;
+            margin-bottom: 15px;
+            font-size: 16px;
+            font-weight: 500;
+        }
+        
+        .download-btn {
+            display: block;
+            width: 180px;
+            margin: 0 auto 12px;
+            padding: 12px 25px;
+            background: #1e90ff;
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 15px;
+            font-weight: 600;
+            text-align: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(30, 144, 255, 0.3);
+        }
+        
+        .download-btn:hover {
+            background: #0077ff;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(30, 144, 255, 0.4);
+        }
+        
+        .hint-text {
+            text-align: center;
+            font-size: 12px;
+            color: #757575;
+            margin-bottom: 15px;
+        }
+        
+        .doc-links {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        
+        .doc-link {
+            display: block;
+            padding: 8px 12px;
+            background: #ffffff;
+            color: #1e90ff;
+            text-decoration: none;
+            border-radius: 4px;
+            font-size: 12px;
+            transition: all 0.2s ease;
+            border: 1px solid #e9ecef;
+            word-break: break-all;
+        }
+        
+        .doc-link:hover {
+            background: #e3f2fd;
+            border-color: #1e90ff;
+        }
+        
+        .coming-soon {
+            text-align: center;
+            padding: 40px 20px;
+            color: #999999;
+            font-size: 18px;
+            font-style: italic;
+        }
+        
+        .decoration {
+            margin-top: 20px;
+            text-align: center;
+        }
+        
+        .decoration-line {
+            display: inline-block;
+            width: 30px;
+            height: 2px;
+            background: #1e90ff;
+            margin: 0 5px;
+            opacity: 0.6;
+        }
+        
+        .decoration-star {
+            color: #1e90ff;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- 第一个大专栏：混蛋资源简介 -->
+        <div class="main-column">
+            <h1 class="column-title">混蛋资源简介</h1>
+            
+            <div class="intro-content">
+                <p>大家好，我是小混蛋，这是我的专属文件下载站，欢迎使用该网站！</p>
+            </div>
+            
+            <div class="intro-content">
+                <p>该网站由小混蛋制作，致力于为大家提供优质、实用的资源下载服务。</p>
+                
+                <ul class="intro-list">
+                    <li><strong>1. 网站定位：</strong>专注于游戏模组、开发工具等实用资源的分享平台</li>
+                    <li><strong>2. 资源特色：</strong>提供经过测试验证的稳定版本，确保下载安全可靠</li>
+                    <li><strong>3. 服务理念：</strong>坚持免费分享，致力于打造友好的资源交流社区</li>
+                    <li><strong>4. 未来规划：</strong>将陆续添加更多游戏资源和实用工具，敬请期待</li>
+                </ul>
+            </div>
+            
+            <div class="author-info">
+                <a href="https://space.bilibili.com/3546922518317391?spm_id_from=333.1007.0.0" target="_blank" class="author-link">
+                    作者b站主页
+                </a>
+                <p class="author-support">给作者点个赞，点个关注支持一下吧！</p>
+            </div>
+        </div>
+        
+        <!-- 第二个大专栏：软件下载 -->
+        <div class="main-column">
+            <h1 class="column-title">软件下载</h1>
+            
+            <div class="software-grid">
+                <!-- 第一个小专栏：网易我的世界mod -->
+                <div class="software-column">
+                    <h3 class="software-subtitle">资源下载</h3>
+                    
+                    <div class="software-info">网易我的世界mod——SDK模板</div>
+                    
+                    <a href="https://wwbct.lanzouu.com/i0Vei3e0zh8d" target="_blank" class="download-btn">
+                        下载
+                    </a>
+                    
+                    <div class="hint-text">该文件没有提取码</div>
+                    
+                    <div class="doc-links">
+                        <a href="https://mc.163.com/dev/index.html" target="_blank" class="doc-link">
+                            开发者官网：https://mc.163.com/dev/index.html
+                        </a>
+                    </div>
+                    
+                    <div class="decoration">
+                        <span class="decoration-line"></span>
+                        <span class="decoration-star">✦</span>
+                        <span class="decoration-line"></span>
+                    </div>
+                </div>
+                
+                <!-- 第二个小专栏：敬请期待 -->
+                <div class="software-column">
+                    <h3 class="software-subtitle">资源下载</h3>
+                    <div class="coming-soon">敬请期待<br>稍后会进一步添加内容</div>
+                </div>
+                
+                <!-- 第三个小专栏：敬请期待 -->
+                <div class="software-column">
+                    <h3 class="software-subtitle">资源下载</h3>
+                    <div class="coming-soon">敬请期待<br>稍后会进一步添加内容</div>
+                </div>
+                
+                <!-- 第四个小专栏：敬请期待 -->
+                <div class="software-column">
+                    <h3 class="software-subtitle">资源下载</h3>
+                    <div class="coming-soon">敬请期待<br>稍后会进一步添加内容</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
